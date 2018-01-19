@@ -1,0 +1,106 @@
+@import 'header';
+/*跑馬燈*/
+#marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    height: auto;
+    background: #000;
+    border-top: .2rem solid yellow;
+    border-bottom: .2rem solid yellow;
+    #marquee_box{
+        max-width: 1366px;
+        height: auto;
+        margin: 0 auto;
+        .icon-voice{
+            color: white;
+            font-size: 4rem;          
+        }
+        .current_location{
+            display: inline-block;
+            padding: .2rem 0;
+            @media(max-width: 768px){
+                display: none;
+            }
+            .home_box{
+                display: inline-block;
+                position: relative;
+                height: auto;
+                margin: 0;
+                top: -0.5rem;
+                input{
+                    border: 0;
+                    height: auto;
+                    width: 8rem;
+                    color: #fff;
+                    font-size: 2rem;   
+                    background: none;    
+                }
+            }
+            span{
+                &.icon-home{
+                    color: white;
+                    font-size: 4rem; 
+                }
+            }
+        }
+    
+        .stage {
+            overflow: hidden;
+            width: calc(100% - 300px);
+            margin: 0px auto;
+            float: right;
+            height: 4rem;
+            position: relative;
+            background: none;
+            .showbox {
+                display: inline-block;
+                white-space: nowrap;
+                a {
+                    float: left;
+                    margin: 0 3rem;
+                    white-space: nowrap;
+                    color: #fff;
+                    vertical-align: middle;
+                    @include fontX(2rem, 4rem);
+                }
+            }
+        } 
+    }
+    @media(max-width:768px){
+        #marquee_box{
+            .stage {
+                overflow: hidden;
+                width: calc(100% - 13%);
+            }
+        }
+    }
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 1.25),
+    only screen and ( min--moz-device-pixel-ratio: 1.25),
+    only screen and ( -o-min-device-pixel-ratio: 1.25/1),
+    only screen and ( min-device-pixel-ratio: 1.25){
+        #marquee_box{
+            .icon-voice{
+                font-size: 2rem;
+            }
+            .stage {
+                overflow: hidden;
+                width: calc(100% - 7vmin);
+                height: auto;
+                .showbox {
+                    display: inline-block;
+                    white-space: nowrap;
+                    a {
+                        float: left;
+                        margin: 0 3rem;
+                        white-space: nowrap;
+                        color: #fff;
+                        vertical-align: middle;
+                        @include fontX(1rem, 2rem);
+                    }
+                }
+            }
+        }
+    }
+}
+

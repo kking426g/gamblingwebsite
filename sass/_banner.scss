@@ -1,0 +1,82 @@
+//banner, 位置列表
+#banner{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    img{
+        width: 100%;
+        height: auto;
+        display: inline-block;
+    }
+    @media(max-width: 768px){
+        display: none;
+    }
+}
+
+//手機banner顯示
+#banner_s{
+    width: 100%;
+    height: auto;
+    display: none;
+    margin: 0 auto;
+    position: relative;
+    min-height: 25vmin;
+    .img_box{
+        width: 100%;
+        height: auto;
+        position: absolute;
+        &.shrink{
+            width: 49%;
+            display: inline-block;
+            position: relative;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &.landscape{
+        min-height: 0px;
+    }
+
+    @media(max-width: 768px){
+        display: block;
+    }
+}
+
+//顯示目前頁面(手機)
+#current_page{
+    display: none;
+    background: #fff;
+    color: white;
+    height: 52px;
+    .home_box{
+        display: inline-block;
+        width: 50%;
+        position: relative;
+        height: 40px;
+        margin: 0;
+        top: -14px;
+        background: gray;
+        input{
+            background: gray;
+            border: 0;
+            height: 40px;
+            width: 100%;
+            font-size: 20px;       
+        }
+    }
+    span{
+        color: white;
+        font-size: 30px;
+        &.icon-home{
+            color: white;
+            font-size: 30px;
+        }
+    }
+    // @media(max-width: 768px){
+    //     display: block;
+    // }
+}

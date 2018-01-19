@@ -1,0 +1,528 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="cache-control" content="public">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        <meta name="description" content="">
+        <meta name="theme-color" content="#434a80">
+        <link rel="icon" type="image/x-icon"  href="images/Gti_weblogo_16X16.ico">
+        <title>record_list</title>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script> 
+        <script type="text/javascript" src="bootstrap-daterangepicker/moment.min.js"></script>
+        <script type="text/javascript" src="bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script type="text/javascript" src="bootpag/lib/jquery.bootpag.js"></script>
+        <script type="text/javascript" src="js/page_script.js"></script>
+        <script type="text/javascript" src="js/marquee.js"></script>
+        <script type="text/javascript" src="js/setSize.js"></script>
+        <script type="text/javascript" src="js/loadgame.js"></script>
+
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <link rel="stylesheet" href="css/stylesheet.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/bootstrap-daterangepicker/daterangepicker.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <script>
+            $(function(){
+                $( "#datepicker" ).datepicker();
+                $( "#datepicker1" ).datepicker();
+            })
+        </script>   
+    </head>
+    <body>
+        <header>
+            <div id="menu_box">
+                <button id="menu" class="icon-menu"></button> 
+                <!-- <button class="back"><img src="/images/top_icon_back.png" alt=""></button> -->    
+                <button class="icon-money"></button>
+                <button class="icon-website"></button>
+                <div class="msg">
+                    <button class="icon-massage"></button>
+                    <div id="new">N</div>
+                </div>
+                <div class="logo"><a href="game_list.html"><img src="images/3_gameslobby_logo_for_pc.png" alt=""></a></div>
+                <div class="logo_m"><a href="game_list.html"><img src="images/3_gameslobby_logo_for_mobile.png" alt=""></a></div>      
+            </div>
+            <!--左邊遊戲選單-->
+            <div id="left_menu">
+                <div id="menuleft_close">
+                    <div class="icon-close" ></div>
+                </div>
+                <div id="data_box">
+                    <div id="current_balance_list">
+                        <button class="icon-current_balance">CURRENT BALANCE</button>
+                        <table>
+                            <tr>
+                                <td class="td_right">GT SLOT</td>
+                                <td class="td_left">$8000000000</td>
+                            </tr>
+                            <tr>
+                                <td class="td_right">GT SLOT</td>
+                                <td class="td_left">$8000000000</td>
+                            </tr>
+                            <tr>
+                                <td class="td_right">GT SLOT</td>
+                                <td class="td_left">$8000000000</td>
+                            </tr>
+                            <tr>
+                                <td class="td_right">GT SLOT</td>
+                                <td class="td_left">$8000000000</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="my_record_list">
+                        <button class="icon-my_record">MY RECORD</button> 
+                    </div>
+                    <div id="my_record"></div>
+                    <div id="game_menu">
+                        <button type="">GT SLOTS<span class="icon-right_triangle"></span></button>
+                        <button type="">GT SPORT<span class="icon-right_triangle"></span></button>
+                        <button type="">BBIN<span class="icon-right_triangle"></span></button>
+                        <button type="">GT LOTTERY<span class="icon-right_triangle"></span></button>
+                        <button type="">GT SLOTS<span class="icon-right_triangle"></span></button>
+                        <button type="">GT SPORT<span class="icon-right_triangle"></span></button>
+                        <button type="">BBIN<span class="icon-right_triangle"></span></button>
+                        <button type="">GT LOTTERY<span class="icon-right_triangle"></span></button>
+                    </div>               
+                </div>  
+            </div> 
+            <div class="mask1"></div>
+        </header>
+        <!--頁面內容-->
+        <article class="page record_list">
+            <!-- banner桌機版 -->
+            <div class="page_bg auto container-fluid bg_bottom">
+                    <div class="datetime container"></div>
+                    <div id="banner">
+                        <div class="col-sm-6">
+                            <img src="images/banner_01.jpg" class="img-rounded" alt="banner_01">
+                        </div>
+                        <div class="col-sm-6">
+                            <img src="images/banner_02.jpg" class="img-rounded" alt="banner_02">   
+                        </div>
+                    </div>
+            </div>
+                <!--手機版顯示 -->
+                <div  class="page_bg auto bg_bottom_s">
+                    <div id="banner_s">
+                        <div class="img_box">
+                            <img src="images/banner_02.jpg" class="img-rounded" alt="">  
+                        </div>
+                        <div class="img_box">
+                            <img src="images/banner_01.jpg" class="img-rounded" alt="">  
+                        </div>
+                    </div>  
+                </div>
+            <!-- [root]component/marquee -->
+            <div id="marquee" class="container-fluid">
+                <div id="marquee_box">
+                    <div class="current_location">
+                        <span class="icon-home"></span>
+                        <div class="home_box">   
+                            <input type="" name="" value="">
+                        </div>          
+                    </div>   
+                    <span class="icon-voice"></span>
+                    <div class="stage">
+                        <div class="showbox" style="width: 3413.3px; margin-left: -2499.2px;">
+                            <a>　7-11手機測試</a>
+                            <a>亲爱的会员您好~因密码1234及8888这些过于简单的密码组合容易被有心人士利用登入~请您不定时更换密码或是不要设定简易密码以免被盗用。谢谢！</a>
+                            <a>　　　请按『CTRL+D』一键收藏本站网址，下次访问更快速！　　</a>
+                        </div>
+                        <div class="showbox" style="width: 3413.3px;">
+                            <a>　7-11手機測試</a>
+                            <a>亲爱的会员您好~因密码1234及8888这些过于简单的密码组合容易被有心人士利用登入~请您不定时更换密码或是不要设定简易密码以免被盗用。谢谢！　　　</a>
+                            <a>　　　请按『CTRL+D』一键收藏本站网址，下次访问更快速！　　</a>
+                        </div> 
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div id="current_page">
+                <span class="icon-home"></span>
+                <div class="home_box"><input type="" name="" value=""></div>        
+            </div>
+
+            <div class="page_bg auto container-fluid">
+                <div id="record_menu_wider" class="container-fluid">
+                    <table class="table borderless">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div>Platform:</div>
+                                    <select>
+                                        <option value="GT GAME">GT GAME</option>
+                                        <option value="PT GAME">PT GAME</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <div>Time Zone:</div>
+                                    <select>
+                                        <option value="GT GAME">GT GAME</option>
+                                        <option value="PT GAME">PT GAME</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <div>Period:</div>
+                                    <input type="date" name="" value="">  
+                                    <input type="date" name="" value="">
+                                    <button type="">SEARCH</button>                       
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="choose_game">
+                                    <div>Game:</div>
+                                    <select>
+                                        <option value="GT GAME">GT GAME</option>
+                                        <option value="PT GAME">PT GAME</option>
+                                    </select>                       
+                                </td>
+                                <td></td>
+                                <td>
+                                    <div>Quick Select:</div>
+                                    <button type="">Today</button>
+                                    <button type="">Yesterday</button>
+                                    <button type="">This Week</button>
+                                    <button type="">Last Week</button>
+                                    <button type="">This Month</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="record_menu_s" class="container record_menu_s">
+                    <div class="title col-4 col-xs-4">
+                        Platform:
+                    </div> 
+                    <div class="col-8 col-xs-8">
+                        <select>
+                            <option>請選擇</option>
+                            <option>請選擇</option>
+                            <option>請選擇</option>
+                            <option>請選擇</option>
+                        </select>
+                    </div> 
+                    <div class="title col-4 col-xs-4">
+                        Game:
+                    </div>
+                    <div class="col-8 col-xs-8">
+                        <select>
+                            <option value="GT GAME">GT GAME</option>
+                            <option value="PT GAME">PT GAME</option>
+                        </select>
+                    </div>
+                    <div class="title col-4 col-xs-4">
+                        Time Zone:
+                    </div>
+                    <div class="col-8 col-xs-8">
+                        <select>
+                            <option value="GT GAME">GT GAME</option>
+                            <option value="PT GAME">PT GAME</option>
+                        </select>
+                    </div>
+                    <div class="title col-4 col-xs-4">
+                        <div>Period:</div>
+                    </div>
+                    <div class="col-8 col-xs-8">
+                        <input type="input" id="datepicker" readonly>
+                    </div>
+                    <div class="title col-4 col-xs-4">
+                    </div>
+                    <div class="col-8 col-xs-8">
+                        <input type="input" id="datepicker1" readonly>
+                    </div>
+                    <div class="title col-4 col-xs-4">
+                    </div>
+                    <div class="col-4 col-xs-4">
+                    </div>
+                    <div class="col-4 col-xs-4">
+                        <button type="">SEARCH</button>
+                    </div>
+                    <div class="title col-4 col-xs-4">
+                        <div>Quick Select:</div>
+                    </div>
+                    <div class="col-4 col-xs-4">
+                        <button type="">Today</button>
+                    </div>
+                    <div class="col-4 col-xs-4">
+                        <button type="">Yesterday</button>
+                    </div>
+                    <div class="col-4 col-xs-4">
+                        <button type="">This Week</button>
+                    </div>
+                    <div class="col-4 col-xs-4">
+                        <button type="">Last Week</button>
+                    </div>
+                    <div class="col-4 col-xs-4">
+                    </div>
+                    <div class="col-4 col-xs-4">
+                        <button type="">This Month</button>
+                    </div>
+                    <div class="col-4 col-xs-4">
+                    </div>
+                </div> 
+                <div id="dropdown" class="bg_top_s">
+                    <div class="arrow arrow-down"></div>
+                        methods
+                </div>
+
+                <div class="container-fuild">
+                    <!--記錄列表-->
+                    <div id="record_table">
+                        <table>
+                            <tr>
+                                <th>BET Date / Time</th>
+                                <th>Bet Number</th>
+                                <th>Platform</th>
+                                <th>Game</th>
+                                <th>Game Round</th>
+                                <th>Game Table</th>
+                                <th>Bet Amount</th>
+                                <th>Valid Amount</th>
+                                <th>Payout Time</th>
+                                <th>W/L</th>
+                                <th>Payout</th>
+                                <th>Cash Back</th>
+                                <th>Status</th>
+                                <th>Detail</th>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>0000001</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>XXXX</td>
+                                <td>BET TRACER</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>0000001</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>XXXX</td>
+                                <td>BET TRACER</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>0000001</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>XXXX</td>
+                                <td>BET TRACER</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>0000001</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>XXXX</td>
+                                <td>BET TRACER</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>0000001</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>XXXX</td>
+                                <td>BET TRACER</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>0000001</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>XXXX</td>
+                                <td>BET TRACER</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>0000001</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>XXXX</td>
+                                <td>BET TRACER</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>0000001</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>XXXX</td>
+                                <td>BET TRACER</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>0000001</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>XXXX</td>
+                                <td>BET TRACER</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>0000001</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>600,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>100,00</td>
+                                <td>XXXX</td>
+                                <td>BET TRACER</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                        <!-- 記錄列表-desktop-right -->
+                        <div class="pagelist">
+                            <li><a>First</a></li>
+                            <li><a>Previous</a></li>
+                            <li><a>1</a></li>
+                            <li><a>2</a></li>
+                            <li><a>3</a></li>
+                            <li><a>4</a></li>
+                            <li><a>5</a></li>
+                            <li><a>Next</a></li>
+                            <li><a>Last</a></li>
+                        </div>
+
+                    <!-- <div id="record_table_s">
+                        <table>
+                            <tr>
+                                <th>BET Date / Time</th>
+                                <th>NUMBER</th>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/01 10:15:13 GMT +8</td>
+                                <td>GTIAG1008</td>
+                            </tr>
+                        </table>
+                    </div> -->
+
+                    <div id="pagelist_m">
+                        <li><a>First</a></li>
+                        <li><a><</a></li>
+                        <li><a>></a></li>
+                        <li><a>Last</a></li>
+                    </div>
+                </div>       
+            </div>
+        </article>
+    </body>
+</html>

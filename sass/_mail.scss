@@ -1,0 +1,107 @@
+@import 'header';
+//訊息頁
+#mail_table{
+    margin: 0 auto;
+    overflow-y: hidden;
+    padding: 1rem;
+    table{
+        width: 100%;
+        tr{
+            border: 1px solid #44403c;
+            background: #cdcdcd;
+            &.hover_act:hover{
+                background: #fffa78;
+            }
+            .yellow{
+                background: #fffa78;
+            }
+            .read_btn{
+                width: 32px;
+                height: 32px;
+                cursor: pointer;
+            }
+            .plus_btn{
+                background: url('../images/icon_open.png') no-repeat;
+                display: inline-block;
+            }
+            .minus_btn{
+                display: none;
+                background: url('../images/icon_off.png') no-repeat;
+                display: inline-block;
+            }
+            td{
+                border: 1px solid #44403c;
+                color: #000;
+                @include fontX(1.5rem, 1.5rem);
+                padding: 1rem;  
+                &.action_section{
+                   text-align: center;
+                }
+                
+            }
+            &:nth-child(odd){
+                background-color:#fff;
+            }
+            th{
+                border: 1px solid #5b2e07;
+                color: #fff;
+                background: #5b2e07;
+                padding: .8rem;
+                @include fontX(1.5rem, 1.5rem);
+            }
+        }
+        .view_content{
+            background: #fafadc;
+            display:none;
+        }
+        @media(max-width: 768px){  
+            tr{
+                background: #cdcdcd;
+                &.hover_act:hover{
+                    background: '';
+                }
+                td{
+                    color: #000;
+                    @include fontX(.5em, 1em);
+                    padding: 3vmin;
+                    border: .1vmin solid #44403c;
+                }
+                th{
+                    border: .1rem solid #44403c;
+                    color: #fff;
+                    background: #5b2e07;
+                    @include fontX(.5em, 1em);
+                    font-weight: normal;
+                    padding: 2vmin;
+                }
+            }
+        }
+        @media
+        only screen and (-webkit-min-device-pixel-ratio: 1.25),
+        only screen and ( min--moz-device-pixel-ratio: 1.25),
+        only screen and ( -o-min-device-pixel-ratio: 1.25/1),
+        only screen and ( min-device-pixel-ratio: 1.25){
+            tr{
+                background: #cdcdcd;
+                &.hover_act:hover{
+                    background: '';
+                }
+                td{
+                    color: #000;
+                    @include fontX(.5em, 1em);
+                    padding: 3vmin;
+                    border: .1vmin solid #44403c;
+                }
+                th{
+                    border: .1rem solid #44403c;
+                    color: #fff;
+                    background: #5b2e07;
+                    @include fontX(.5em, 1em);
+                    font-weight: normal;
+                    padding: 2vmin;
+                }
+            }
+        }
+    }
+
+}

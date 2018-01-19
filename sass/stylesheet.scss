@@ -1,0 +1,179 @@
+@import 'mail';
+@import 'header';
+@import "marquee";
+@import 'game';
+@import 'login';
+@import 'record';
+@import 'accessrestricted';
+@import 'banner';
+@import 'maintenance';
+@import 'bootstrap';
+
+html {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+    overflow-y: auto;
+    background: #000000;
+    background-size: 100%;
+}
+
+body {
+    background-image: url('../images/3_gameslobby_bg.jpg');
+    background-color: #000 !important;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center center;
+    font-family: Arial, "Microsoft YaHei", "Microsoft JhengHei", "Hiragino Sans GB", "Noto Sans SC", STHeiti, sans-serif;
+    font-size: 16px;//setting font size
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 17%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    right: 0;
+    ::-webkit-scrollbar-track {
+        background-color: #232323;
+    }
+    ::-webkit-scrollbar {
+        width: 4px;
+        background-color: #232323;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #7d7d7d;
+    } 
+       
+    //遮罩
+    &.lock {       
+        overflow-y: hidden;
+        z-index: 0;
+        .lockmask {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            line-height: 1000px;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.75);
+            #load_title{
+                position: fixed;
+                font-size: 30px;
+                color: #fff;
+                left: 55%;
+                &.desk{
+                    margin-left: -130px;
+                    margin-top: -90px;
+                }
+                &.landscape{
+                    margin-left: -130px;
+                    margin-top: -230px;
+                }
+            }
+        }
+    }
+
+    .page{
+        padding-top: 70px;  
+        margin: 0 auto;
+        height: auto; 
+        //格子背景
+        .page_bg{
+            margin: 0 auto;
+            max-width: 1366px;
+            background: url("../images/3_gameslobby_content_1366bg.png") repeat; 
+            &.auto{
+                height: auto;
+            }
+            &.percent{
+                height: 100%;
+            }
+        }
+        &.stop_scrolling {
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+
+    //日期
+    div.datetime {
+        width: auto;
+        height: auto;
+        @include fontX(2rem, 2rem); 
+        margin: 1rem 0;
+        color: #FFF;
+        @media(max-width: 768px){
+            display: none;
+        }
+    }
+}
+
+.bg_bottom{
+    padding-bottom: 4rem;
+    @media(max-width: 768px){
+        display: none;
+    }
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 1.25),
+    only screen and ( min--moz-device-pixel-ratio: 1.25),
+    only screen and ( -o-min-device-pixel-ratio: 1.25/1),
+    only screen and ( min-device-pixel-ratio: 1.25){
+        display: none;
+    }
+}
+
+.bg_bottom_s{
+    padding-bottom: 5vmin;
+    @media(min-width: 768px){
+        display: none;
+    }
+}
+
+.bg_top_s{
+    padding-top: 3rem;
+    @media(max-width: 768px){
+        padding-top: 5vmin;
+    }
+}
+
+.msg{
+    position: relative;
+    float: right;
+}
+
+//msg n
+#new{
+    background: red;
+    border-radius: 1rem;
+    padding: .3rem .5rem;
+    position: absolute;
+    top: .5rem;
+    line-height: 1rem;
+    right: 0;
+    color: #fff;
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 1.25),
+    only screen and ( min--moz-device-pixel-ratio: 1.25),
+    only screen and ( -o-min-device-pixel-ratio: 1.25/1),
+    only screen and ( min-device-pixel-ratio: 1.25){
+        border-radius: 3vmin;
+        padding: 1vmin 1.5vmin;
+        top: .5rem;
+        font-size: 3vmin;
+        line-height: 3vmin;
+    }
+}
+
+
+
+
+

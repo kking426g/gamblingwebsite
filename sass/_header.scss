@@ -1,0 +1,348 @@
+/* 文字大小  高度 */
+@mixin fontX ( $size1: 14px, $size2: $size1) {
+    font-size: $size1;
+    line-height: $size2;
+}
+
+header {
+    background: url("../images/3_gameslobby_top_lr_bg.png") repeat;
+    position: fixed;
+    width: 100%;
+    height: 6rem;
+    top: 0;
+    right: 0;
+    padding: 0;
+    z-index: 1; //上面的圈圈button
+    @media(max-width: 812px){
+        background: none;
+    }
+    #menu_box{
+        max-width: 1366px;
+        margin: 0 auto;
+        max-height: calc(6rem - .22rem);
+        background: url("../images/3_gameslobby_top_bg.png") no-repeat;
+        background-size: 100% 100%;
+        button {
+            margin: .5rem;
+            padding: 0;
+            border: none;
+            outline: 0;
+            float: left;
+            font-size: 5rem; 
+            background: none;
+            color: #fff;
+            cursor: pointer;
+            &:hover{
+                color: yellow;
+            }
+            //訊息 拼錯字..存款, 連結
+            &.icon-massage, &.icon-money, &.icon-website {
+                float: right;
+            }
+        }
+
+        @media (max-width: 767px){
+            max-height: none;
+            height: calc(33vmin/2); 
+            button{
+                font-size: 9vmin;
+                margin: 2vmin 1vmin;
+            }
+        }
+
+        //mobile
+        @media
+        only screen and (-webkit-min-device-pixel-ratio: 1.25),
+        only screen and ( min--moz-device-pixel-ratio: 1.25),
+        only screen and ( -o-min-device-pixel-ratio: 1.25/1),
+        only screen and ( min-device-pixel-ratio: 1.25){
+            max-height: none;
+            height: calc(30vmin/2); 
+        }
+    }
+
+    div.logo {
+        margin: 5px;
+        padding: 0;
+        width: 369px;
+        height: 150px;
+        margin: 0 auto;
+        cursor: pointer;
+        img{
+            height: 150px;
+        }
+        @media(max-width: 812px){
+            display: none;
+        }
+    }
+
+    div.logo_m{
+        display: none;
+        width: 20vmin;
+        height: calc(30vmin/2);
+        padding: 0;
+        margin: 0 auto;
+        cursor: pointer;
+        img{
+            width: 100%;
+            margin: 1vmin;
+        }
+        @media(max-width: 812px){
+            display: block;
+        }
+    }
+
+    .mask1{
+        position: absolute;
+        display: none;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        background: rgba(0, 0, 0, 0.55);
+    }
+}
+
+//左邊遊戲menu
+#left_menu{
+    width: 380px;
+    position: fixed;
+    height: 100%;
+    margin-left: -380px;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    top: 0;
+    z-index: 10;
+    display: block;
+    overflow: auto;
+
+    &.openmenu {
+        margin-left: 0;
+        transition: all 0.5s ease-out 0s;
+        -webkit-transition: all 0.5s ease-out 0s;
+        -moz-transition: all 0.5s ease-out 0s;
+        -ms-transition: all 0.5s ease-out 0s;
+        -o-transition: all 0.5s ease-out 0s;
+    }
+
+    &.closemenu {
+        margin-left: -380px;
+        transition: all 0.5s ease-in 0s;
+        -webkit-transition: all 0.5s ease-in 0s;
+        -moz-transition: all 0.5s ease-in 0s;
+        -ms-transition: all 0.5s ease-in 0s;
+        -o-transition: all 0.5s ease-in 0s;
+    }
+
+    #menuleft_close{
+        margin: 0 auto;
+        text-align: right;
+        padding-right: 1rem;
+        //left: 40%;
+        .icon-close{
+            @include fontX(5rem, 5rem); 
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+        }
+        //mobile
+        @media
+        only screen and (-webkit-min-device-pixel-ratio: 1.25),
+        only screen and ( min--moz-device-pixel-ratio: 1.25),
+        only screen and ( -o-min-device-pixel-ratio: 1.25/1),
+        only screen and ( min-device-pixel-ratio: 1.25){
+            padding: 2vmin;
+            .icon-close{
+                @include fontX(9vmin, 9vmin); 
+            }
+        }   
+    }
+
+    //mobile
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 1.25),
+    only screen and ( min--moz-device-pixel-ratio: 1.25),
+    only screen and ( -o-min-device-pixel-ratio: 1.25/1),
+    only screen and ( min-device-pixel-ratio: 1.25){
+        width: 60vmin;
+        margin-left: -60vmin;
+        &.openmenu {
+            margin-left: 0;
+            transition: all 0.5s ease-out 0s;
+            -webkit-transition: all 0.5s ease-out 0s;
+            -moz-transition: all 0.5s ease-out 0s;
+            -ms-transition: all 0.5s ease-out 0s;
+            -o-transition: all 0.5s ease-out 0s;
+        }
+    
+        &.closemenu {
+            margin-left: -60vmin;
+            transition: all 0.5s ease-in 0s;
+            -webkit-transition: all 0.5s ease-in 0s;
+            -moz-transition: all 0.5s ease-in 0s;
+            -ms-transition: all 0.5s ease-in 0s;
+            -o-transition: all 0.5s ease-in 0s;
+        }
+        #menuleft_close{
+            @include fontX(7vmin, 7vmin); 
+        }
+
+     }
+
+    #data_box{
+        height: auto;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        ::-webkit-scrollbar-track {
+            background-color: #232323;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+            background-color: #232323;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #7d7d7d;
+        }
+
+        //餘額顯示列表
+        #current_balance_list{
+            text-align: center;
+            margin: 1rem 0;
+            button{
+                background: -moz-linear-gradient(top, #e0a900 0%, #fff25e 19%, #cd7d00 82%, #ffed58 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, #e0a900 0%,#fff25e 19%,#cd7d00 82%,#ffed58 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, #e0a900 0%,#fff25e 19%,#cd7d00 82%,#ffed58 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                width: 90%;
+                border: 0;
+                padding: 1rem 0;
+                border-radius: .2rem .2rem 0 0;
+                &.icon-current_balance{
+                    @include fontX(2rem, 2rem); 
+                    color: white;
+                    display: inline-block;
+                    font-weight: bold;
+                }
+            }
+            table{
+                width: 90%;
+                background: #000;
+                margin: 0 auto;
+                text-align: center;
+                border-radius: 0 0 1vmin 1vmin;
+                border-collapse:collapse;
+                tr{              
+                    td{
+                        padding: 1rem;
+                        border: 0.2rem solid gray;
+                        @include fontX(1.6rem, 1.6rem);
+                        &.td_right{
+                            color: orangered;
+                        }
+                        &.td_left{
+                            color: white;
+                        }
+                    }
+                }
+                @media
+                only screen and (-webkit-min-device-pixel-ratio: 1.25),
+                only screen and ( min--moz-device-pixel-ratio: 1.25),
+                only screen and ( -o-min-device-pixel-ratio: 1.25/1),
+                only screen and ( min-device-pixel-ratio: 1.25){
+                    tr{              
+                        td{
+                            padding: 2vmin;
+                            border: 0.5vmin solid gray;
+                            @include fontX(4vmin, 6vmin);
+                            &.td_right{
+                                color: orangered;
+                            }
+                            &.td_left{
+                                color: white;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        //下注紀錄按鈕
+        #my_record_list{
+            text-align: center;
+            margin: 10px 0;
+            button{
+                background: -moz-linear-gradient(top, #0094d1 0%, #5effee 19%, #0077e5 93%, #58ffce 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, #0094d1 0%,#5effee 19%,#0077e5 93%,#58ffce 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, #0094d1 0%,#5effee 19%,#0077e5 93%,#58ffce 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094d1', endColorstr='#58ffce',GradientType=0 ); /* IE6-9 */
+                width: 90%;
+                border: 0;
+                padding: 1rem 0;
+                border-radius: .2rem;
+                &.icon-my_record{
+                    @include fontX(2rem, 2rem); 
+                    color: white;
+                    display: inline-block;
+                    font-weight: bold;
+                }
+            }
+        }
+        
+        //遊戲類別選單
+        #game_menu{
+            width: 90%;
+            margin: 0 auto;
+            color: #fff;
+            button{
+                position: relative;
+                width: 100%;
+                margin: .3rem auto;
+                padding: 0rem 0;
+                border: 0;
+                text-align: center;
+                color: white;
+                border-radius: .2rem;
+                @include fontX(2rem, 3.5rem);
+                background: -moz-linear-gradient(top, #cfcfcf 0%, #d6d6d6 29%, #848484 70%, #9a9a9a 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, #cfcfcf 0%,#d6d6d6 29%,#848484 70%,#9a9a9a 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, #cfcfcf 0%,#d6d6d6 29%,#848484 70%,#9a9a9a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                &:hover{
+                    background: -moz-linear-gradient(top, #4384ff 0%, #1163ff 29%, #0044c3 85%, #0044c2 100%); /* FF3.6-15 */
+                    background: -webkit-linear-gradient(top, #4384ff 0%,#1163ff 29%,#0044c3 85%,#0044c2 100%); /* Chrome10-25,Safari5.1-6 */
+                    background: linear-gradient(to bottom, #4384ff 0%,#1163ff 29%,#0044c3 85%,#0044c2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                }
+                span.icon-right_triangle{
+                    float: right;
+                    display: none;
+                    padding-top: 1rem;
+                }
+                &.on{
+                    background: -moz-linear-gradient(top, #4384ff 0%, #1163ff 29%, #0044c3 85%, #0044c2 100%); /* FF3.6-15 */
+                    background: -webkit-linear-gradient(top, #4384ff 0%,#1163ff 29%,#0044c3 85%,#0044c2 100%); /* Chrome10-25,Safari5.1-6 */
+                    background: linear-gradient(to bottom, #4384ff 0%,#1163ff 29%,#0044c3 85%,#0044c2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ 
+                }
+            }
+        }
+    }
+    &.landscape{
+        width: 100vmin;
+        margin-left: -100vmin;
+        &.openmenu {
+            margin-left: 0;
+            transition: all 0.5s ease-out 0s;
+            -webkit-transition: all 0.5s ease-out 0s;
+            -moz-transition: all 0.5s ease-out 0s;
+            -ms-transition: all 0.5s ease-out 0s;
+            -o-transition: all 0.5s ease-out 0s;
+        }
+    
+        &.closemenu {
+            margin-left: -100vmin;
+            transition: all 0.5s ease-in 0s;
+            -webkit-transition: all 0.5s ease-in 0s;
+            -moz-transition: all 0.5s ease-in 0s;
+            -ms-transition: all 0.5s ease-in 0s;
+            -o-transition: all 0.5s ease-in 0s;
+        } 
+
+    }
+}

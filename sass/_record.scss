@@ -1,0 +1,349 @@
+@import 'header';
+#record_table{
+    width: 100%;
+    margin: 0 auto;
+    overflow: scroll; 
+    table{
+        background: #44403c;
+        width: 100%;
+        tr{
+            background: #c6c2be;
+            td{
+                color: #000;
+                @include fontX(1.5rem, 1.5rem);
+                padding: 1rem;
+                border: .1rem solid #44403c;  
+            }
+            &:nth-child(odd){
+                background-color:#fff;
+            }
+            th{
+                border: 1px solid #5b2e07;
+                color: #fff;
+                background: #5b2e07;
+                padding: .8rem;
+                @include fontX(1.5rem, 1.5rem);
+            }
+        }
+    }
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 1.25),
+    only screen and ( min--moz-device-pixel-ratio: 1.25),
+    only screen and ( -o-min-device-pixel-ratio: 1.25/1),
+    only screen and ( min-device-pixel-ratio: 1.25){
+        table{
+            width: 100%;
+            background: #44403c;
+            tr{
+                background: #c6c2be;
+                td{
+                    color: #000;
+                    @include fontX(.5rem, 1rem);
+                    padding: 3vmin;
+                    border: .1vmin solid #44403c;
+                }
+                &:nth-child(odd){
+                    background-color:#fff;
+                }
+                th{
+                    border: .1rem solid #44403c;
+                    color: #fff;
+                    background: #5b2e07;
+                    @include fontX(.5rem, 1rem);
+                    font-weight: normal;
+                    padding: 2vmin;
+                }
+            }
+        }
+        @media(max-width: 768px){
+            display: block;
+        }
+    }
+}
+
+.record_list{
+    .container{
+        @media (min-width: 768px){
+            min-width: 890px;
+            .right{
+                padding: 0;
+            }
+        }
+    }
+}
+
+#record_menu_wider{
+    padding: 3rem;
+    table{
+        &.borderless{
+            td, th{
+                border: none;
+            }
+        } 
+        tr{
+            td{
+                text-align: right;
+                div{
+                    color: #fff;
+                    display: inline-block;
+                    @include fontX(1.6rem, 1.6rem);
+                }
+
+                select {
+                    margin: 0;
+                    background: transparent;
+                    min-width: 12rem;
+                    width: auto;
+                    padding: .5rem;
+                    font-size: 1.6rem;
+                    line-height: 1.6rem;
+                    border-radius: .3rem;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    background:  url('../images/icon_pull.png'), #fff ;
+                    background-position: right;
+                    background-size: 38px 38px, 100% 100%;
+                    background-repeat: no-repeat, repeat;
+                }
+
+                input{
+                    background: transparent;
+                    padding: .2rem;
+                    font-size: 1.6rem;
+                    line-height: 1rem;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    border-radius: .3rem;
+                    background: #fff ;                   
+                }
+
+                input[type="date"]::-webkit-calendar-picker-indicator {
+                    color: rgba(0, 0, 0, 0);
+                    opacity: 1;
+                    display: block;
+                    //background:  url('../images/icon_date.png') no-repeat;
+                    background-size: 100% 100%; 
+                }
+
+                button{
+                    background: -moz-linear-gradient(top, #e6e6e6 0%, #e6e6e6 0%, #e6e6e6 20%, #ffffff 42%, #a1a1a1 92%, #ffffff 100%, #ffffff 101%); /* FF3.6-15 */
+                    background: -webkit-linear-gradient(top, #e6e6e6 0%,#e6e6e6 0%,#e6e6e6 20%,#ffffff 42%,#a1a1a1 92%,#ffffff 100%,#ffffff 101%); /* Chrome10-25,Safari5.1-6 */
+                    background: linear-gradient(to bottom, #e6e6e6 0%,#e6e6e6 0%,#e6e6e6 20%,#ffffff 42%,#a1a1a1 92%,#ffffff 100%,#ffffff 101%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                    padding: .3rem 1.2rem;
+                    border-radius: .3rem;
+                    margin: .2rem;
+                    color: #000;
+                    border: 0;
+                    @include fontX(1.6rem, 2rem);
+                }
+            }
+        }
+    }
+    @media(max-width: 768px){
+        display: none;
+    }
+}
+
+//遊戲紀錄(手機)
+#record_menu_s{
+    display: none;
+    max-width: 500px;
+    width: 100%;
+    padding: 5vmin;
+    .title{
+        padding: 0;
+        text-align: right;
+        color: #fff;
+        display: inline-block;
+        @include fontX(1.5rem, 2.3rem); 
+    }
+
+    select {
+        width: 100%;
+        padding: 1vmin;
+        font-size: 1.5rem;
+        margin: 1vmin;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border-radius: 5px;
+        background:  url('../images/icon_pull.png'), #fff ;
+        background-position: right;
+        background-size: 38px 38px, 100% 100%;
+        background-repeat: no-repeat, repeat;
+    }
+
+    input{
+        font-size: 1.5em;
+        margin: 1vmin;
+        height: 8vmin;
+        width: 100%;
+        border-radius: 1vmin;
+        background: #fff;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    } 
+
+    button{
+        background: -moz-linear-gradient(top, #e6e6e6 0%, #e6e6e6 0%, #e6e6e6 20%, #ffffff 42%, #a1a1a1 92%, #ffffff 100%, #ffffff 101%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #e6e6e6 0%,#e6e6e6 0%,#e6e6e6 20%,#ffffff 42%,#a1a1a1 92%,#ffffff 100%,#ffffff 101%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #e6e6e6 0%,#e6e6e6 0%,#e6e6e6 20%,#ffffff 42%,#a1a1a1 92%,#ffffff 100%,#ffffff 101%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        padding: 1vmin;
+        float: right;
+        width: 100%;
+        font-size: 1rem;
+        border-radius: 1vmin;
+        margin: 1vmin;
+        color: #000;
+        border: 0;
+    }
+}
+
+#dropdown{
+    color: white;
+    display: none;
+    font-size: 40px;
+    height: 50px;
+    margin: 20px auto;
+    width: 100%;
+    padding: 12px;
+    .arrow-up {
+        width: 0; 
+        height: 0; 
+        display: inline-block;
+        border-left: 26px solid transparent;
+        border-right: 23px solid transparent;
+        border-bottom: 23px solid #fff;
+    }
+
+    .arrow-down {
+        width: 0; 
+        height: 0; 
+        display: inline-block;
+        border-left: 23px solid transparent;
+        border-right: 23px solid transparent;
+        border-top: 23px solid #fff;
+    }
+
+    @media(max-width: 768px){
+        display: block;
+        margin: 0 auto;
+        height: auto;
+        @include fontX(2em, 10vmin);
+        .arrow-down{
+            border-left: 2vmin solid transparent;
+            border-right: 2vmin solid transparent;
+            border-top: 3vmin solid #fff;
+        }
+        .arrow-up{
+            border-left: 2vmin solid transparent;
+            border-right: 2vmin solid transparent;
+            border-bottom: 3vmin solid #fff;
+        }
+    }
+
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 1.25),
+    only screen and ( min--moz-device-pixel-ratio: 1.25),
+    only screen and ( -o-min-device-pixel-ratio: 1.25/1),
+    only screen and ( min-device-pixel-ratio: 1.25){
+    }
+}
+
+//頁數列表(mail, record共用)
+.pagelist{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    li{
+        list-style-type: none;
+        display: inline-block;
+        margin: 2rem 0 0 0;
+        a{
+            background: -moz-linear-gradient(top, #e6e6e6 0%, #e6e6e6 0%, #e6e6e6 20%, #ffffff 42%, #a1a1a1 92%, #ffffff 100%, #ffffff 101%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #e6e6e6 0%,#e6e6e6 0%,#e6e6e6 20%,#ffffff 42%,#a1a1a1 92%,#ffffff 100%,#ffffff 101%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #e6e6e6 0%,#e6e6e6 0%,#e6e6e6 20%,#ffffff 42%,#a1a1a1 92%,#ffffff 100%,#ffffff 101%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            padding: .5rem 1rem;
+            border-radius: .3rem;
+            //margin: 1em;
+            color: #000;
+            @include fontX(1.6rem, 1.6rem);
+            border: 0;
+            text-decoration: none;
+            &:hover{
+                color: #fff;
+                background: -moz-linear-gradient(top, #008cff 0%, #00c1ff 37%, #00c1ff 56%, #000cfe 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, #008cff 0%,#00c1ff 37%,#00c1ff 56%,#000cfe 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, #008cff 0%,#00c1ff 37%,#00c1ff 56%,#000cfe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            }
+        } 
+    }
+    @media(max-width: 768px){
+        display: none;
+    }   
+}
+
+#pagelist_msg{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    button{
+        background: #323944;
+        padding: 7px 15px;
+        border-radius: 3px;
+        margin: 30px 5px;
+        color: #fff;
+        border: 0;
+        &:hover{
+            background: #666462;
+        }
+    }
+    @media(max-width: 768px){
+        display: none;
+    }
+}
+
+.bootpag_drop{
+    color: white;
+    select{
+        display: unset;
+        width: auto;
+        margin: 5px;
+        padding: 5px;
+        font-size: 16px;
+        height: 34px;
+    }
+}
+
+//頁數列表 手機版
+#pagelist_m{
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5vmin 0;
+    li{
+        list-style-type: none;
+        display: inline-block;
+        a{
+            background: -moz-linear-gradient(top, #e6e6e6 0%, #e6e6e6 0%, #e6e6e6 20%, #ffffff 42%, #a1a1a1 92%, #ffffff 100%, #ffffff 101%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #e6e6e6 0%,#e6e6e6 0%,#e6e6e6 20%,#ffffff 42%,#a1a1a1 92%,#ffffff 100%,#ffffff 101%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #e6e6e6 0%,#e6e6e6 0%,#e6e6e6 20%,#ffffff 42%,#a1a1a1 92%,#ffffff 100%,#ffffff 101%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            padding: 2vmin 4vmin;
+            border-radius: 1vmin;
+            margin: 0px 1vmin;
+            color: #000;
+            border: 0;
+            @include fontX(1em, 3vmin);
+            text-decoration: none;
+            &:hover{
+                background: -moz-linear-gradient(top, #008cff 0%, #00c1ff 37%, #00c1ff 56%, #000cfe 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, #008cff 0%,#00c1ff 37%,#00c1ff 56%,#000cfe 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, #008cff 0%,#00c1ff 37%,#00c1ff 56%,#000cfe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                color: #fff;
+            }
+        } 
+    }
+    @media(max-width: 768px){
+        display: block;
+    }  
+}
